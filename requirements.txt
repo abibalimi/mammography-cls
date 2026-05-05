@@ -4,6 +4,7 @@ setuptools>=65.5.0
 
 # data science
 torch
+pytorch-lightning
 torchvision
 timm
 
