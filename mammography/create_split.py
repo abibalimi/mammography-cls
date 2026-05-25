@@ -73,7 +73,7 @@ if __name__ == "__main__":
     print("\nPatients per split")
     print(split_df.groupby("split")["patient_id"].nunique())
 
-    print("\nLeakage check")
+    print("\nLeakage check") # Checking for patient overlap between splits: medical imaging sanity check
     train_patients = set(
         split_df[
             split_df["split"] == "train"
