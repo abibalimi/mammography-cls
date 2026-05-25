@@ -9,7 +9,7 @@ requirements = [x.strip() for x in content if 'git+' not in x]
 
 setup(name="mammography",
       version="1.0",
-      description="Transformer-based mammography classification package",
+      description="Lightweight mammography classification package",
       author_email="abib.alimi@gmail.com",
       packages=find_packages(),
       install_requires=requirements,
