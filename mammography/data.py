@@ -84,6 +84,5 @@ if __name__ == "__main__":
                                      annotations_file=IMAGE_ANNOTATIONS_VAL)
     show_images(val_data)
     
-    val_dataloader = DataLoader(val_data, batch_size=32, shuffle=True, num_workers=0)
+    val_dataloader = DataLoader(val_data, batch_size=32, shuffle=True, num_workers=0, drop_last=True)
     show_image_and_label(val_dataloader)
-    
