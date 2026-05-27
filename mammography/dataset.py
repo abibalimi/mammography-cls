@@ -61,9 +61,22 @@ class MammographyDataset(Dataset):
 def get_transform():
     """
     Define image transformations using Albumentations.
+    Specifically designed for mammography images:
+     - Resizes the longest side to 512 pixels while maintaining aspect ratio.
+     - Pads the image to 512x512 if necessary, using constant padding with a value of 0 (black).
+     - This preserve the original aspect ratio and prevents distortion, which is crucial for medical images.
+     For instance, pectoral muscle still triangular in MLO.
     """
     transform =  A.Compose([
-        A.Resize(512, 512),
+        
+        A.LongestMaxSize(max_size=512),
+        A.PadIfNeeded(
+            min_height=512,
+            min_width=512,
+            border_mode=cv2.BORDER_CONSTANT,
+            fill=0
+        ),
         ToTensorV2()
     ])
+    
     return transform
