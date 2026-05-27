@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from dataset import MammographyDataset, get_transform
+from mammography.dataset import MammographyDataset, get_transform
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
